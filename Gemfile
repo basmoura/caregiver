@@ -65,3 +65,5 @@ group :development do
 end
 
 gem "devise", "~> 4.9"
+
+gem "shoulda-matchers", "~> 6.5", :groups => [:development, :test]
