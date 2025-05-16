@@ -36,5 +36,7 @@
 /app/assets/builds/*
 !/app/assets/builds/.keep
 
+config/database.yml
+
 # Ignore .zed folder
 .zed
