@@ -54,6 +54,9 @@ group :development, :test do
 
   # Use Rspec for tests
   gem "rspec-rails", "~> 8.0.0"
+
+  # Use FactoryBot for Fixtures
+  gem "factory_bot_rails"
 end
 
 group :development do
