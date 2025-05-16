@@ -14,6 +14,6 @@ RSpec.describe Role, type: :model do
     subject.is_billing_admin = true
     subject.is_admin = true
 
-    expect(subject).to be_valid
+    expect(subject).not_to be_valid
   end
 end
