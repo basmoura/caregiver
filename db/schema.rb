@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_16_141051) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_16_183528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -25,10 +25,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_141051) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.boolean "is_care_giver"
-    t.boolean "is_admin"
-    t.boolean "is_billing_admin"
-    t.boolean "is_active"
+    t.boolean "is_care_giver", default: false
+    t.boolean "is_admin", default: false
+    t.boolean "is_billing_admin", default: false
+    t.boolean "is_active", default: true
     t.bigint "agency_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_141051) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "unconfirmed_email"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
