@@ -38,3 +38,6 @@
 
 # Ignore database file
 /config/database.yml
+
+# Ignore .zed folder
+.zed
