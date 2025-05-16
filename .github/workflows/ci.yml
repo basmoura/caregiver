@@ -76,6 +76,10 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Install required apt packages
+        run: |
+          sudo apt-get -y install libpq-dev
+
       - name: Run test suite
         run: |
           bundle exec rails db:setup
