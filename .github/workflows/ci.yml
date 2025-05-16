@@ -81,6 +81,8 @@ jobs:
           sudo apt-get -y install libpq-dev
 
       - name: Run test suite
+        env:
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
           bundle exec rails db:setup
           bundle exec rspec
